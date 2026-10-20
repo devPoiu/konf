@@ -207,6 +207,7 @@ def get_scale_matrix():
         return [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
 
 def apply_scale_to_vector(v, S):
+    # =====================================тут===================================================
     return Vec3(
         S[0][0]*v.x + S[0][1]*v.y + S[0][2]*v.z,
         S[1][0]*v.x + S[1][1]*v.y + S[1][2]*v.z,
@@ -220,6 +221,7 @@ def ok_matrix():
         t_j = Vec3(float(matrix_fields[0][1].text), float(matrix_fields[1][1].text), float(matrix_fields[2][1].text))
         t_k = Vec3(float(matrix_fields[0][2].text), float(matrix_fields[1][2].text), float(matrix_fields[2][2].text))
         S = get_scale_matrix()
+    # =====================================тут===================================================
         target_i = apply_scale_to_vector(t_i, S)
         target_j = apply_scale_to_vector(t_j, S)
         target_k = apply_scale_to_vector(t_k, S)
